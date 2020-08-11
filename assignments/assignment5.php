@@ -6,7 +6,7 @@
  * Вывод приложения должен содержать время.
  */
 function assignment5(){
-    $query = "SELECT * FROM person WHERE full_name like 'F%' and sex like 'male'";
+    $query = "SELECT * FROM person WHERE full_name like 'F%' and gender like 'male'";
     // Подсчет идет в микросекундах, т.к. в случае с time() будет просто 1 или 0
     $now = microtime(true);
     Db::getInstance()->query($query);

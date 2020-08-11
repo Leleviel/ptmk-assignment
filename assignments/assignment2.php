@@ -20,14 +20,15 @@ function assignment2($args)
         echo 'Не переданы все данные: ' . join(', ', $errors) . ".\n";
         return;
     }
-    // строка, содержащаяя запроса
-    $query = "INSERT INTO person (full_name, birthdate, sex) VALUES (?, ? , ?)";
-    // Получение соединения с БД и выполнение запроса
-    $instance = Db::getInstance();
-    $stmt = $instance->prepare($query);
-    if ($stmt->execute($values)) {
+    // Создание объекта для запроса
+    $person = new Person();
+    $person->setFullName($values[0]);
+    $person->setBirthdate($values[1]);
+    $person->setGender($values[2]);
+
+    if ($id = $person->insert()) {
         // Если пользователь был успешно создан, то выводится его идентификатор в БД
-        echo $instance->lastInsertId() . ' пользователь был успешно создан';
+        echo $id . ' пользователь был успешно создан';
     } else {
         echo "Не удалось создать пользователя";
     }

@@ -1,6 +1,10 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 require_once 'db.php';
+require_once 'Entity/Person.php';
+require_once 'Entity/ORM.php';
+require_once 'Repository/PersonRepository.php';
+require_once 'Repository/AbstractRepository.php';
 // Возможные режимы работы, их описания и что необходимо подключить для их выполнения
 $modes = [
     '1' => [
