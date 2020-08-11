@@ -12,7 +12,7 @@ function assignment6(){
     echo "\nВыбраны два поля в паре, так как именно по ним и производится запрос.\n".
         "В MySQL можно сделать два запроса:\n".
         "explain SELECT count(*) FROM person force index(PRIMARY) WHERE full_name like 'F%' and gender like 'male'\n".
-        "explain SELECT count(*) FROM person force index(name_sex) WHERE full_name like 'F%' and gender like 'male'\n".
+        "explain SELECT count(*) FROM person force index(name_gender) WHERE full_name like 'F%' and gender like 'male'\n".
         "Из них можно увидеть, что при применении индекса количество обрабатываемых строк снижается более чем в 10 раз.".
         "Это и обуславливает повышенную производительность\n\n";
 
